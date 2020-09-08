@@ -4,6 +4,9 @@ import VueResource from "vue-resource"
 
 Vue.config.productionTip = false
 
+// Vue.http.options.root = 'https://hw3-vue.firebaseio.com';
+
+
 Vue.use(VueResource);
 
 new Vue({
