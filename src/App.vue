@@ -48,16 +48,16 @@ export default {
     add () {
       this.arrayToDo.push({item:this.todo});
       this.$http.post('https://hw3-vue.firebaseio.com/.json',{item:this.todo});
-      this.todo="";
+      this.todo = "";
     },
 
     remove (i) {
       this.arrayToDo.splice(i, 1);
       this.$http.get('https://hw3-vue.firebaseio.com/.json')
-      .then((res)=>{
+      .then((res) => {
         return res.json();
       })
-      .then((res)=>{
+      .then((res) => {
         this.$http.delete(`https://hw3-vue.firebaseio.com/${Object.keys(res)[i]}.json`)
       })
     }
